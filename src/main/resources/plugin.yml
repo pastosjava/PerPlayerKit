@@ -199,6 +199,10 @@ commands:
     aliases:
       - purgeitems
 
+  kitdata:
+    usage: /<command> <export <all|kitroom|publickits|playerkits> <file>|import <file>>
+    permission: perplayerkit.admin
+
   regear:
     usage: /<command>
     permission: perplayerkit.regear

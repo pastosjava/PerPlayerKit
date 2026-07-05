@@ -92,6 +92,13 @@ error:
   purge-invalid-item: "<red>Tipo de objeto desconocido: {item}"
   purge-in-progress: "<red>Ya hay una purga de objetos en curso, espera a que termine"
   purge-player-not-found: "<red>No se pudo encontrar al jugador {player}, purga cancelada"
+  kitdata-invalid-scope: "<red>Tipo de datos desconocido {scope}. Usa all, kitroom, publickits o playerkits."
+  kitdata-invalid-filename: "<red>Nombre de archivo inválido. Usa letras, números, puntos, guiones y guiones bajos (máximo 64 caracteres)."
+  kitdata-file-not-found: "<red>No se encontró el archivo {file} en la carpeta del plugin"
+  kitdata-invalid-file: "<red>Importación fallida: {error}"
+  kitdata-nothing-to-export: "<red>No se encontraron datos de {scope} para exportar"
+  kitdata-in-progress: "<red>Ya hay otra exportación o importación de datos de kits en curso, espera a que termine"
+  kitdata-export-failed: "<red>Exportación fallida, revisa la consola para más detalles"
 
 success:
   kit-saved: "<green>¡Kit {slot} guardado!"
@@ -123,6 +130,8 @@ success:
   transfer-received: "<green>¡Se transfirieron {kits} kits y {ecs} cofres de ender de {player}!"
   transfer-sent: "<green>¡Tus kits y cofres de ender fueron transferidos a {player}!"
   purge-completed: "<green>¡Purga completada! Se eliminaron {items} {item} de {modified} kits y cofres de ender."
+  kitdata-exported: "<green>Se exportaron {entries} entradas a {file}"
+  kitdata-imported: "<green>¡Importación desde {file} completada!"
 
 info:
   custom-version-available: "<gray>Puedes guardar una versión personalizada de este kit importándolo en el editor"
@@ -152,6 +161,11 @@ info:
   purge-starting-players: "<yellow>Purgando {item} de los kits y cofres de ender guardados de {count} jugador(es)..."
   purge-summary: "<gray>Se escanearon {scanned} entradas; se eliminaron {deleted} entradas vaciadas."
   purge-failed-entries: "<yellow>No se pudieron procesar {count} entradas, revisa la consola para más detalles."
+  kitdata-file-exists: "<yellow>El archivo {file} ya existe. Ejecuta <white>{command}</white> para sobrescribirlo."
+  kitdata-export-starting: "<yellow>Exportando datos de {scope} a {file}..."
+  kitdata-import-starting: "<yellow>Importando datos de kits desde {file}..."
+  kitdata-import-overwrites: "<yellow>Importar {file} sobrescribirá {kitroom} página(s) de la sala de kits, {publickits} kit(s) público(s) y {playerkits} entradas de kits/cofres de ender de jugadores. Ejecuta <white>{command}</white> para continuar."
+  kitdata-import-summary: "<gray>Se importaron {kitroom} página(s) de la sala de kits, {publickits} kit(s) público(s) y {playerkits} entradas de kits/cofres de ender de jugadores."
 
 command:
   perplayerkit-about: "<green>PerPlayerKit es un plugin que permite a los jugadores tener sus propios kits."
@@ -162,6 +176,7 @@ command:
   kitroom-usage-hint: "/kitroom \\<load/save>"
   inspect-usage: "<red>Uso: /{command} \\<jugador|uuid> \\<slot></red>"
   purgeitem-usage: "<red>Uso: /purgeitem \\<item> \\<all confirm|player ...>"
+  kitdata-usage: "<red>Uso: /kitdata export \\<all|kitroom|publickits|playerkits> \\<file> | /kitdata import \\<file>"
 
 update:
   new-version-available: "¡Hay una nueva versión de PerPlayerKit disponible! Estás usando la versión {current} y la última es {latest}"

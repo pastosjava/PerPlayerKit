@@ -92,6 +92,13 @@ error:
   purge-invalid-item: "<red>Nieznany typ przedmiotu: {item}"
   purge-in-progress: "<red>Czyszczenie przedmiotów już trwa, poczekaj aż się zakończy"
   purge-player-not-found: "<red>Nie można znaleźć gracza {player}, czyszczenie anulowano"
+  kitdata-invalid-scope: "<red>Nieznany typ danych {scope}. Użyj all, kitroom, publickits lub playerkits."
+  kitdata-invalid-filename: "<red>Nieprawidłowa nazwa pliku. Użyj liter, cyfr, kropek, myślników i podkreśleń (maks. 64 znaki)."
+  kitdata-file-not-found: "<red>Nie znaleziono pliku {file} w folderze pluginu"
+  kitdata-invalid-file: "<red>Import nie powiódł się: {error}"
+  kitdata-nothing-to-export: "<red>Nie znaleziono danych {scope} do eksportu"
+  kitdata-in-progress: "<red>Inny eksport lub import danych zestawów już trwa, poczekaj aż się zakończy"
+  kitdata-export-failed: "<red>Eksport nie powiódł się, sprawdź konsolę, aby uzyskać szczegóły"
 
 success:
   kit-saved: "<green>Zestaw {slot} zapisany!"
@@ -123,6 +130,8 @@ success:
   transfer-received: "<green>Przekazano {kits} zestawów i {ecs} skrzyń Endera od gracza {player}!"
   transfer-sent: "<green>Twoje zestawy i skrzynie Endera zostały przekazane graczowi {player}!"
   purge-completed: "<green>Czyszczenie zakończone! Usunięto {items} {item} z {modified} zestawów i skrzyń Endera."
+  kitdata-exported: "<green>Wyeksportowano {entries} wpisów do {file}"
+  kitdata-imported: "<green>Import z {file} zakończony!"
 
 info:
   custom-version-available: "<gray>Możesz zapisać własną wersję tego zestawu, importując ją do edytora"
@@ -152,6 +161,11 @@ info:
   purge-starting-players: "<yellow>Czyszczenie {item} z zapisanych zestawów i skrzyń Endera {count} graczy..."
   purge-summary: "<gray>Przeskanowano {scanned} wpisów; usunięto {deleted} opróżnionych wpisów."
   purge-failed-entries: "<yellow>Nie udało się przetworzyć {count} wpisów, sprawdź konsolę, aby uzyskać szczegóły."
+  kitdata-file-exists: "<yellow>Plik {file} już istnieje. Wykonaj <white>{command}</white>, aby go nadpisać."
+  kitdata-export-starting: "<yellow>Eksportowanie danych {scope} do {file}..."
+  kitdata-import-starting: "<yellow>Importowanie danych zestawów z {file}..."
+  kitdata-import-overwrites: "<yellow>Import {file} nadpisze {kitroom} stron pokoju zestawów, {publickits} publicznych zestawów i {playerkits} wpisów zestawów/skrzyń Endera graczy. Wykonaj <white>{command}</white>, aby kontynuować."
+  kitdata-import-summary: "<gray>Zaimportowano {kitroom} stron pokoju zestawów, {publickits} publicznych zestawów i {playerkits} wpisów zestawów/skrzyń Endera graczy."
 
 command:
   perplayerkit-about: "<green>PerPlayerKit to plugin pozwalający graczom mieć własne zestawy."
@@ -162,6 +176,7 @@ command:
   kitroom-usage-hint: "/kitroom \\<load/save>"
   inspect-usage: "<red>Użycie: /{command} \\<gracz|uuid> \\<slot></red>"
   purgeitem-usage: "<red>Użycie: /purgeitem \\<item> \\<all confirm|player ...>"
+  kitdata-usage: "<red>Użycie: /kitdata export \\<all|kitroom|publickits|playerkits> \\<file> | /kitdata import \\<file>"
 
 update:
   new-version-available: "Dostępna jest nowa wersja PerPlayerKit! Używasz wersji {current}, a najnowsza to {latest}"

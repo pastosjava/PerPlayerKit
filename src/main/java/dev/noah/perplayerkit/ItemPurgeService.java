@@ -19,7 +19,7 @@
 package dev.noah.perplayerkit;
 
 import dev.noah.perplayerkit.storage.StorageManager;
-import dev.noah.perplayerkit.util.KitSlots;
+import dev.noah.perplayerkit.util.IDUtil;
 import dev.noah.perplayerkit.util.Serializer;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -29,7 +29,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import java.util.function.Consumer;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -44,8 +43,6 @@ import java.util.stream.Collectors;
  */
 public class ItemPurgeService {
 
-    private static final Pattern UUID_PATTERN =
-            Pattern.compile("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}");
     private static final int UUID_LENGTH = 36;
 
     private final StorageManager storage;
@@ -138,21 +135,7 @@ public class ItemPurgeService {
      * /kitroom.
      */
     static boolean isPlayerDataId(String id) {
-        if (id == null || id.length() < UUID_LENGTH + 1) {
-            return false;
-        }
-        if (!UUID_PATTERN.matcher(id.substring(0, UUID_LENGTH)).matches()) {
-            return false;
-        }
-
-        String suffix = id.substring(UUID_LENGTH);
-        if (suffix.startsWith("ec")) {
-            suffix = suffix.substring(2);
-        }
-        // Bounded by the absolute KitSlots.MAX_LIMIT, deliberately not the
-        // configured max-kits: the database may hold kits above a lowered
-        // limit and purging must still reach them.
-        return KitSlots.parseSlotSuffix(suffix) != null;
+        return IDUtil.isPlayerDataId(id);
     }
 
     /**

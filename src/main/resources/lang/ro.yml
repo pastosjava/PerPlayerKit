@@ -92,6 +92,13 @@ error:
   purge-invalid-item: "<red>Tip de obiect necunoscut: {item}"
   purge-in-progress: "<red>O curățare de obiecte este deja în curs, așteaptă să se termine"
   purge-player-not-found: "<red>Nu s-a putut găsi jucătorul {player}, curățarea a fost anulată"
+  kitdata-invalid-scope: "<red>Tip de date necunoscut {scope}. Folosește all, kitroom, publickits sau playerkits."
+  kitdata-invalid-filename: "<red>Nume de fișier invalid. Folosește litere, cifre, puncte, cratime și liniuțe de subliniere (maxim 64 de caractere)."
+  kitdata-file-not-found: "<red>Fișierul {file} nu a fost găsit în folderul pluginului"
+  kitdata-invalid-file: "<red>Importul a eșuat: {error}"
+  kitdata-nothing-to-export: "<red>Nu s-au găsit date {scope} de exportat"
+  kitdata-in-progress: "<red>Un alt export sau import de date de kituri este deja în curs, așteaptă să se termine"
+  kitdata-export-failed: "<red>Exportul a eșuat, verifică consola pentru detalii"
 
 success:
   kit-saved: "<green>Kitul {slot} a fost salvat!"
@@ -123,6 +130,8 @@ success:
   transfer-received: "<green>S-au transferat {kits} kituri și {ecs} cufere Ender de la {player}!"
   transfer-sent: "<green>Kiturile și cuferele tale Ender au fost transferate lui {player}!"
   purge-completed: "<green>Curățare finalizată! S-au eliminat {items} {item} din {modified} kituri și cufere Ender."
+  kitdata-exported: "<green>S-au exportat {entries} intrări în {file}"
+  kitdata-imported: "<green>Importul din {file} s-a finalizat!"
 
 info:
   custom-version-available: "<gray>Poți salva o versiune personalizată a acestui kit importând-o în editor"
@@ -152,6 +161,11 @@ info:
   purge-starting-players: "<yellow>Se curăță {item} din kiturile și cuferele Ender salvate a {count} jucător(i)..."
   purge-summary: "<gray>S-au scanat {scanned} intrări; {deleted} intrări golite au fost șterse."
   purge-failed-entries: "<yellow>Nu s-au putut procesa {count} intrări, verifică consola pentru detalii."
+  kitdata-file-exists: "<yellow>Fișierul {file} există deja. Rulează <white>{command}</white> pentru a-l suprascrie."
+  kitdata-export-starting: "<yellow>Se exportă datele {scope} în {file}..."
+  kitdata-import-starting: "<yellow>Se importă datele de kituri din {file}..."
+  kitdata-import-overwrites: "<yellow>Importul {file} va suprascrie {kitroom} pagină(i) din camera kiturilor, {publickits} kit(uri) publice și {playerkits} intrări de kituri/cufere Ender ale jucătorilor. Rulează <white>{command}</white> pentru a continua."
+  kitdata-import-summary: "<gray>S-au importat {kitroom} pagină(i) din camera kiturilor, {publickits} kit(uri) publice și {playerkits} intrări de kituri/cufere Ender ale jucătorilor."
 
 command:
   perplayerkit-about: "<green>PerPlayerKit este un plugin care permite jucătorilor să aibă propriile kituri."
@@ -162,6 +176,7 @@ command:
   kitroom-usage-hint: "/kitroom \\<load/save>"
   inspect-usage: "<red>Utilizare: /{command} \\<jucător|uuid> \\<slot></red>"
   purgeitem-usage: "<red>Utilizare: /purgeitem \\<item> \\<all confirm|player ...>"
+  kitdata-usage: "<red>Utilizare: /kitdata export \\<all|kitroom|publickits|playerkits> \\<file> | /kitdata import \\<file>"
 
 update:
   new-version-available: "Este disponibilă o nouă versiune de PerPlayerKit! Folosești versiunea {current}, iar cea mai recentă este {latest}"

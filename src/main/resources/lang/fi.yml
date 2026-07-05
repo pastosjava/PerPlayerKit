@@ -92,6 +92,13 @@ error:
   purge-invalid-item: "<red>Tuntematon esinetyyppi: {item}"
   purge-in-progress: "<red>Esineiden poisto on jo käynnissä, odota sen valmistumista"
   purge-player-not-found: "<red>Pelaajaa {player} ei löytynyt, poisto peruutettiin"
+  kitdata-invalid-scope: "<red>Tuntematon tietotyyppi {scope}. Käytä all, kitroom, publickits tai playerkits."
+  kitdata-invalid-filename: "<red>Virheellinen tiedostonimi. Käytä kirjaimia, numeroita, pisteitä, viivoja ja alaviivoja (enintään 64 merkkiä)."
+  kitdata-file-not-found: "<red>Tiedostoa {file} ei löytynyt lisäosan kansiosta"
+  kitdata-invalid-file: "<red>Tuonti epäonnistui: {error}"
+  kitdata-nothing-to-export: "<red>Vietävää {scope}-dataa ei löytynyt"
+  kitdata-in-progress: "<red>Toinen kittidatan vienti tai tuonti on jo käynnissä, odota sen valmistumista"
+  kitdata-export-failed: "<red>Vienti epäonnistui, katso lisätiedot konsolista"
 
 success:
   kit-saved: "<green>Kitti {slot} tallennettu!"
@@ -123,6 +130,8 @@ success:
   transfer-received: "<green>Siirretty {kits} kittiä ja {ecs} ender-arkkua pelaajalta {player}!"
   transfer-sent: "<green>Kittisi ja ender-arkkusi siirrettiin pelaajalle {player}!"
   purge-completed: "<green>Poisto valmis! Poistettiin {items} {item} {modified} kitistä ja ender-arkusta."
+  kitdata-exported: "<green>Vietiin {entries} merkintää tiedostoon {file}"
+  kitdata-imported: "<green>Tuonti tiedostosta {file} valmis!"
 
 info:
   custom-version-available: "<gray>Voit tallentaa oman version tästä kitistä tuomalla sen kittieditoriin"
@@ -152,6 +161,11 @@ info:
   purge-starting-players: "<yellow>Poistetaan {item} {count} pelaajan tallennetuista kiteistä ja ender-arkuista..."
   purge-summary: "<gray>Skannattiin {scanned} merkintää; {deleted} tyhjentynyttä merkintää poistettiin."
   purge-failed-entries: "<yellow>{count} merkintää ei voitu käsitellä, katso lisätiedot konsolista."
+  kitdata-file-exists: "<yellow>Tiedosto {file} on jo olemassa. Suorita <white>{command}</white> korvataksesi sen."
+  kitdata-export-starting: "<yellow>Viedään {scope}-dataa tiedostoon {file}..."
+  kitdata-import-starting: "<yellow>Tuodaan kittidataa tiedostosta {file}..."
+  kitdata-import-overwrites: "<yellow>Tiedoston {file} tuonti korvaa {kitroom} kittihuoneen sivua, {publickits} julkista kittiä ja {playerkits} pelaajien kitti-/ender-arkkumerkintää. Suorita <white>{command}</white> jatkaaksesi."
+  kitdata-import-summary: "<gray>Tuotiin {kitroom} kittihuoneen sivua, {publickits} julkista kittiä ja {playerkits} pelaajien kitti-/ender-arkkumerkintää."
 
 command:
   perplayerkit-about: "<green>PerPlayerKit on lisäosa, joka antaa pelaajille omat kitit."
@@ -162,6 +176,7 @@ command:
   kitroom-usage-hint: "/kitroom \\<load/save>"
   inspect-usage: "<red>Käyttö: /{command} \\<pelaaja|uuid> \\<paikka></red>"
   purgeitem-usage: "<red>Käyttö: /purgeitem \\<esine> \\<all confirm|pelaaja ...>"
+  kitdata-usage: "<red>Käyttö: /kitdata export \\<all|kitroom|publickits|playerkits> \\<file> | /kitdata import \\<file>"
 
 update:
   new-version-available: "PerPlayerKitistä on saatavilla uusi versio! Käytät versiota {current} ja uusin versio on {latest}"

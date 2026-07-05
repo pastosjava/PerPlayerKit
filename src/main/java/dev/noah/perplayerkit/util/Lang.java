@@ -229,13 +229,14 @@ public class Lang {
     }
 
     private void deliver(CommandSender sender, Component msg) {
-        if (audience != null) {
-            if (sender instanceof Player p) {
-                audience.player(p).sendMessage(msg);
-            } else {
-                audience.sender(sender).sendMessage(msg);
-            }
+        if (audience != null && sender instanceof Player p) {
+            audience.player(p).sendMessage(msg);
         } else {
+            // Console/RCON/command blocks: adventure-platform picks its console
+            // facet by sniffing the server version and silently drops messages
+            // on versions it doesn't know yet, so send a legacy-serialized
+            // string instead — colors still render and it can't break on
+            // future server versions.
             sender.sendMessage(LegacyComponentSerializer.legacySection().serialize(msg));
         }
     }

@@ -30,6 +30,7 @@ The following table outlines each command, its usage, aliases, and permissions r
 | `enderchest`        | `ec`                     | `perplayerkit.viewenderchest`  |
 | `savepublickit`     | `N/A`                    | `perplayerkit.admin`           |
 | `purgeitem`         | `purgeitems`             | `perplayerkit.admin`           |
+| `kitdata`           | `N/A`                    | `perplayerkit.admin`           |
 | `regear`            | `rg`                     | `perplayerkit.regear`          |
 | `heal`              | `N/A`                    | `perplayerkit.heal`            |
 | `repair`            | `N/A`                    | `perplayerkit.repair`          |
@@ -65,6 +66,27 @@ Details worth knowing:
 - **Online players are covered.** Cached kits of online players are refreshed, so the next `/k1`-style load uses the purged version. The purge does not modify anyone's *live* inventory — only stored kits and ender chests.
 - **Public kits and the kit room are not touched.** Those are admin-managed; edit them with `/savepublickit` and `/kitroom` if needed.
 - The purge runs asynchronously; progress is logged to the console and a summary (items removed, entries modified/deleted/scanned) is sent when it finishes. Only one purge can run at a time.
+
+## Exporting and Importing Kit Data (`.ppk` files)
+
+`/kitdata` (permission: `perplayerkit.admin`, also usable from the console) moves kit data between servers as a single file — for example to hand a finished kit room / public kit setup to another server owner:
+
+- `/kitdata export <all|kitroom|publickits|playerkits> <file>` — writes the selected data to `plugins/PerPlayerKit/<file>.ppk`. If the file already exists, the command asks to be re-run with `confirm` before overwriting it.
+- `/kitdata import <file>` — imports a `.ppk` file placed in `plugins/PerPlayerKit/`. If the import would overwrite existing data, the command reports exactly what would be replaced (kit room pages, public kits, player kit/ender chest entries) and asks to be re-run with `confirm`.
+
+What gets exported per scope:
+
+- **`kitroom`** — the five kit room pages, as last saved to storage (use `/kitroom save` first if you edited the kit room since the last save).
+- **`publickits`** — every public kit **including its config entry** (display name and menu icon). On import, missing `publickits` entries are added to `config.yml` automatically and existing ones are updated, so the receiving server does not need to edit its config by hand. Kits that are declared in the config but never saved with `/savepublickit` are carried over config-only.
+- **`playerkits`** — all player kit and ender chest entries in the database.
+- **`all`** — all of the above.
+
+Details worth knowing:
+
+- **Works across storage backends.** The file stores the same serialized entries every backend uses, so you can export from a SQLite server and import into a MySQL/PostgreSQL/Redis/YAML one (and vice versa).
+- **The file format is validated defensively.** `.ppk` is a small custom binary format with a version number and checksum. On import the file is fully parsed and every kit is test-decoded *before* anything is written — a corrupted, truncated or malformed file is rejected as a whole. Only import files from people you trust, the same way you would treat a downloaded plugin or world.
+- **Caches refresh immediately.** After an import the kit room, public kits and the kits of affected online players are reloaded — no restart needed.
+- File names may contain letters, numbers, dots, dashes and underscores; the `.ppk` extension is added automatically. Files are only ever read from and written to the plugin folder. Only one export/import can run at a time.
 
 ## Regear Command Details
 

@@ -19,6 +19,7 @@
 package dev.noah.perplayerkit;
 
 import dev.noah.perplayerkit.commands.admin.AboutCommandListener;
+import dev.noah.perplayerkit.commands.admin.KitDataCommand;
 import dev.noah.perplayerkit.commands.admin.KitRoomCommand;
 import dev.noah.perplayerkit.commands.admin.PerPlayerKitCommand;
 import dev.noah.perplayerkit.commands.admin.PurgeItemCommand;
@@ -227,6 +228,10 @@ public final class PerPlayerKit extends JavaPlugin {
         PurgeItemCommand purgeItemCommand = new PurgeItemCommand(this);
         this.getCommand("purgeitem").setExecutor(purgeItemCommand);
         this.getCommand("purgeitem").setTabCompleter(purgeItemCommand);
+
+        KitDataCommand kitDataCommand = new KitDataCommand(this);
+        this.getCommand("kitdata").setExecutor(kitDataCommand);
+        this.getCommand("kitdata").setTabCompleter(kitDataCommand);
 
         Bukkit.getPluginManager().registerEvents(regearCommand, this);
         Bukkit.getPluginManager().registerEvents(new JoinListener(this, updateChecker), this);

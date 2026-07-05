@@ -92,6 +92,13 @@ error:
   purge-invalid-item: "<red>Ukendt genstandstype: {item}"
   purge-in-progress: "<red>En genstandsoprydning kører allerede, vent til den er færdig"
   purge-player-not-found: "<red>Kunne ikke finde spilleren {player}, oprydningen blev annulleret"
+  kitdata-invalid-scope: "<red>Ukendt datatype {scope}. Brug all, kitroom, publickits eller playerkits."
+  kitdata-invalid-filename: "<red>Ugyldigt filnavn. Brug bogstaver, tal, punktummer, bindestreger og understregninger (maks. 64 tegn)."
+  kitdata-file-not-found: "<red>Filen {file} blev ikke fundet i plugin-mappen"
+  kitdata-invalid-file: "<red>Import mislykkedes: {error}"
+  kitdata-nothing-to-export: "<red>Ingen {scope}-data fundet at eksportere"
+  kitdata-in-progress: "<red>En anden eksport eller import af kitdata kører allerede, vent til den er færdig"
+  kitdata-export-failed: "<red>Eksport mislykkedes, tjek konsollen for detaljer"
 
 success:
   kit-saved: "<green>Kit {slot} gemt!"
@@ -123,6 +130,8 @@ success:
   transfer-received: "<green>Overførte {kits} kits og {ecs} enderkister fra {player}!"
   transfer-sent: "<green>Dine kits og enderkister blev overført til {player}!"
   purge-completed: "<green>Oprydning fuldført! Fjernede {items} {item} fra {modified} kits og enderkister."
+  kitdata-exported: "<green>Eksporterede {entries} poster til {file}"
+  kitdata-imported: "<green>Import fra {file} fuldført!"
 
 info:
   custom-version-available: "<gray>Du kan gemme en brugerdefineret version af dette kit ved at importere til kit-editoren"
@@ -152,6 +161,11 @@ info:
   purge-starting-players: "<yellow>Fjerner {item} fra gemte kits og enderkister for {count} spiller(e)..."
   purge-summary: "<gray>Skannede {scanned} poster; {deleted} tømte poster blev slettet."
   purge-failed-entries: "<yellow>{count} poster kunne ikke behandles, se konsollen for detaljer."
+  kitdata-file-exists: "<yellow>Filen {file} findes allerede. Kør <white>{command}</white> for at overskrive den."
+  kitdata-export-starting: "<yellow>Eksporterer {scope}-data til {file}..."
+  kitdata-import-starting: "<yellow>Importerer kitdata fra {file}..."
+  kitdata-import-overwrites: "<yellow>Import af {file} vil overskrive {kitroom} kitrum-side(r), {publickits} offentlige kits og {playerkits} spillerkit-/enderkiste-poster. Kør <white>{command}</white> for at fortsætte."
+  kitdata-import-summary: "<gray>Importerede {kitroom} kitrum-side(r), {publickits} offentlige kits og {playerkits} spillerkit-/enderkiste-poster."
 
 command:
   perplayerkit-about: "<green>PerPlayerKit er et plugin, der lader spillere have deres egne kits."
@@ -162,6 +176,7 @@ command:
   kitroom-usage-hint: "/kitroom \\<load/save>"
   inspect-usage: "<red>Brug: /{command} \\<spiller|uuid> \\<slot></red>"
   purgeitem-usage: "<red>Brug: /purgeitem \\<item> \\<all confirm|player ...>"
+  kitdata-usage: "<red>Brug: /kitdata export \\<all|kitroom|publickits|playerkits> \\<file> | /kitdata import \\<file>"
 
 update:
   new-version-available: "En ny version af PerPlayerKit er tilgængelig! Du kører version {current} og den nyeste version er {latest}"

@@ -92,6 +92,13 @@ error:
   purge-invalid-item: "<red>未知的物品类型: {item}"
   purge-in-progress: "<red>已有物品清除任务正在运行，请等待其完成"
   purge-player-not-found: "<red>找不到玩家 {player}，清除已取消"
+  kitdata-invalid-scope: "<red>未知的数据类型 {scope}。请使用 all、kitroom、publickits 或 playerkits。"
+  kitdata-invalid-filename: "<red>无效的文件名。请使用字母、数字、点、连字符和下划线（最多 64 个字符）。"
+  kitdata-file-not-found: "<red>在插件文件夹中找不到文件 {file}"
+  kitdata-invalid-file: "<red>导入失败: {error}"
+  kitdata-nothing-to-export: "<red>没有找到可导出的 {scope} 数据"
+  kitdata-in-progress: "<red>已有套件数据导出或导入任务正在运行，请等待其完成"
+  kitdata-export-failed: "<red>导出失败，详情请查看控制台"
 
 success:
   kit-saved: "<green>套件 {slot} 已保存!"
@@ -123,6 +130,8 @@ success:
   transfer-received: "<green>已从 {player} 转移 {kits} 个套件和 {ecs} 个末影箱!"
   transfer-sent: "<green>你的套件和末影箱已转移给 {player}!"
   purge-completed: "<green>清除完成！已从 {modified} 个套件和末影箱中移除 {items} 个 {item}。"
+  kitdata-exported: "<green>已导出 {entries} 个条目到 {file}"
+  kitdata-imported: "<green>从 {file} 导入完成!"
 
 info:
   custom-version-available: "<gray>你可以通过将此套件导入到编辑器来保存自定义版本"
@@ -152,6 +161,11 @@ info:
   purge-starting-players: "<yellow>正在从 {count} 名玩家已保存的套件和末影箱中清除 {item}..."
   purge-summary: "<gray>已扫描 {scanned} 个条目；{deleted} 个被清空的条目已删除。"
   purge-failed-entries: "<yellow>{count} 个条目无法处理，请查看控制台了解详情。"
+  kitdata-file-exists: "<yellow>文件 {file} 已存在。运行 <white>{command}</white> 以覆盖它。"
+  kitdata-export-starting: "<yellow>正在导出 {scope} 数据到 {file}..."
+  kitdata-import-starting: "<yellow>正在从 {file} 导入套件数据..."
+  kitdata-import-overwrites: "<yellow>导入 {file} 将覆盖 {kitroom} 个套件房间页面、{publickits} 个公共套件和 {playerkits} 个玩家套件/末影箱条目。运行 <white>{command}</white> 以继续。"
+  kitdata-import-summary: "<gray>已导入 {kitroom} 个套件房间页面、{publickits} 个公共套件和 {playerkits} 个玩家套件/末影箱条目。"
 
 command:
   perplayerkit-about: "<green>PerPlayerKit 是一个允许玩家拥有自己套件的插件。"
@@ -162,6 +176,7 @@ command:
   kitroom-usage-hint: "/kitroom \\<load/save>"
   inspect-usage: "<red>用法: /{command} \\<玩家|uuid> \\<槽位></red>"
   purgeitem-usage: "<red>用法: /purgeitem \\<物品> \\<all confirm|玩家 ...>"
+  kitdata-usage: "<red>用法: /kitdata export \\<all|kitroom|publickits|playerkits> \\<file> | /kitdata import \\<file>"
 
 update:
   new-version-available: "PerPlayerKit 有新版本可用! 你正在运行版本 {current},最新版本是 {latest}"

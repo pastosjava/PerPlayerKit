@@ -92,6 +92,13 @@ error:
   purge-invalid-item: "<red>Невідомий тип предмета: {item}"
   purge-in-progress: "<red>Очищення предметів вже виконується, зачекайте його завершення"
   purge-player-not-found: "<red>Не вдалося знайти гравця {player}, очищення скасовано"
+  kitdata-invalid-scope: "<red>Невідомий тип даних {scope}. Використайте all, kitroom, publickits або playerkits."
+  kitdata-invalid-filename: "<red>Невірна назва файлу. Використовуйте літери, цифри, крапки, дефіси та підкреслення (максимум 64 символи)."
+  kitdata-file-not-found: "<red>Файл {file} не знайдено в папці плагіна"
+  kitdata-invalid-file: "<red>Імпорт не вдався: {error}"
+  kitdata-nothing-to-export: "<red>Не знайдено даних {scope} для експорту"
+  kitdata-in-progress: "<red>Інший експорт або імпорт даних наборів вже виконується, зачекайте його завершення"
+  kitdata-export-failed: "<red>Експорт не вдався, перевірте консоль для деталей"
 
 success:
   kit-saved: "<green>Набір {slot} збережено!"
@@ -123,6 +130,8 @@ success:
   transfer-received: "<green>Передано {kits} наборів і {ecs} ендер-скринь від гравця {player}!"
   transfer-sent: "<green>Ваші набори та ендер-скрині передано гравцю {player}!"
   purge-completed: "<green>Очищення завершено! Видалено {items} {item} з {modified} наборів та ендер-скринь."
+  kitdata-exported: "<green>Експортовано {entries} записів до {file}"
+  kitdata-imported: "<green>Імпорт з {file} завершено!"
 
 info:
   custom-version-available: "<gray>Ви можете зберегти свою версію цього набору, імпортувавши його до редактора"
@@ -152,6 +161,11 @@ info:
   purge-starting-players: "<yellow>Очищення {item} зі збережених наборів та ендер-скринь {count} гравця(-ів)..."
   purge-summary: "<gray>Проскановано {scanned} записів; {deleted} спорожнілих записів видалено."
   purge-failed-entries: "<yellow>Не вдалося обробити {count} записів, перевірте консоль для деталей."
+  kitdata-file-exists: "<yellow>Файл {file} вже існує. Виконайте <white>{command}</white>, щоб перезаписати його."
+  kitdata-export-starting: "<yellow>Експортування даних {scope} до {file}..."
+  kitdata-import-starting: "<yellow>Імпортування даних наборів з {file}..."
+  kitdata-import-overwrites: "<yellow>Імпорт {file} перезапише {kitroom} сторінок кімнати наборів, {publickits} публічних наборів і {playerkits} записів наборів/ендер-скринь гравців. Виконайте <white>{command}</white>, щоб продовжити."
+  kitdata-import-summary: "<gray>Імпортовано {kitroom} сторінок кімнати наборів, {publickits} публічних наборів і {playerkits} записів наборів/ендер-скринь гравців."
 
 command:
   perplayerkit-about: "<green>PerPlayerKit — це плагін, що дозволяє гравцям мати власні набори."
@@ -162,6 +176,7 @@ command:
   kitroom-usage-hint: "/kitroom \\<load/save>"
   inspect-usage: "<red>Використання: /{command} \\<гравець|uuid> \\<слот></red>"
   purgeitem-usage: "<red>Використання: /purgeitem \\<предмет> \\<all confirm|гравець ...>"
+  kitdata-usage: "<red>Використання: /kitdata export \\<all|kitroom|publickits|playerkits> \\<file> | /kitdata import \\<file>"
 
 update:
   new-version-available: "Доступна нова версія PerPlayerKit! Ви використовуєте версію {current}, а остання версія — {latest}"

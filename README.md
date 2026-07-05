@@ -1,6 +1,8 @@
-# PerPlayerKit
+# PerPlayerKit - CrystalRanked Replica 
+IMAGES AND CONFIGS ETC MAY HAVE CHANGED AS ITS NOT MY DESC
 
-Join the discord for more information and support: [Discord](https://discord.gg/5djuBSKWuV)
+
+Join the discord for more information and support: [Discord](https://discord.gg/pastosjava)
 
 ## 🚀 Quick Start
 
